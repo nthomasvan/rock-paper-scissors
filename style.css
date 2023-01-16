@@ -1,0 +1,18 @@
+.buttons{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+.btn{
+  border: 20px;
+  background-color:darkgrey;
+  box-shadow: 3px;
+}
+
+.btn:hover{
+  background-color: aqua;
+  transform: translate(2%,-2%);
+  transition: all 0.1s ease-in;
+}

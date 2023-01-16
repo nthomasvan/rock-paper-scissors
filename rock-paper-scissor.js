@@ -105,7 +105,7 @@ function updateScore(playerSelection,computerSelection){
     document.getElementById('playerChoice').innerHTML = `Player Chose: ${playerSelection}`
     document.getElementById('computerChoice').innerHTML = `Computer Chose: ${computerSelection}`
 }
-
+//
 const rockBtn = document.getElementById("rockBtn");
 const paperBtn = document.getElementById("paperBtn");
 const scissorsBtn = document.getElementById("scissorsBtn");

@@ -19,6 +19,20 @@ function getComputerChoice(){
     }
 }
 
+function endGame(playerScore,computerScore){
+    let gameContainer = document.querySelector('.gameContainer');
+    let endContainer = document.querySelector('.endContainer');
+    gameContainer.style.display = 'none';
+    endContainer.style.display = 'block';
+
+    if(playerScore == 5){
+        document.getElementById('result').innerHTML = `You Won! ${playerScore}:${computerScore}`;
+    }
+    else{
+        document.getElementById('result').innerHTML = `You Lost! ${playerScore}:${computerScore}`;
+    }
+}
+
 function getRandomInt(max){
     return Math.floor(Math.random()*max);
 }
@@ -41,7 +55,7 @@ function playRound(playerSelection, computerSelection){
     updateScore(playerSelection, computerSelection);
 
     if(playerScore == 5 || computerScore == 5){
-        document.getElementById('result').innerHTML = "You Won!";
+        endGame(playerScore,computerScore);
     }
     /*
     switch(playerSelection){
@@ -105,6 +119,7 @@ function updateScore(playerSelection,computerSelection){
     document.getElementById('playerChoice').innerHTML = `Player Chose: ${playerSelection}`
     document.getElementById('computerChoice').innerHTML = `Computer Chose: ${computerSelection}`
 }
+
 //
 const rockBtn = document.getElementById("rockBtn");
 const paperBtn = document.getElementById("paperBtn");

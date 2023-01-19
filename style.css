@@ -2,17 +2,47 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 30px;
+  gap: 50px;
 }
 
 .btn{
   border: 20px;
-  background-color:darkgrey;
-  box-shadow: 3px;
+  background-color:white;
+  box-shadow: 4px 5px 0px black;
+  text-align: center;
+  font-weight: bold;
 }
 
-.btn:hover{
-  background-color: aqua;
+#rockBtn:hover{
+  background-color:tomato;
   transform: translate(3%,-2%);
   transition: all 0.1s ease-in;
 }
+
+#paperBtn:hover{
+  background-color:deepskyblue;
+  transform: translate(3%,-2%);
+  transition: all 0.1s ease-in;
+}
+
+#scissorsBtn:hover{
+  background-color:chartreuse;
+  transform: translate(3%,-2%);
+  transition: all 0.1s ease-in;
+}
+
+body{
+  background-color: grey;
+}
+
+.gameContainer{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.endContainer{
+  display: none;
+}
+

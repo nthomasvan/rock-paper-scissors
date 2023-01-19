@@ -9,7 +9,7 @@
   <header class="header">
     <h1 class="title">ROCK PAPER SCISSORS</h1>
   </header>
-  <main class="main">
+  <div class="gameContainer">
     <div class="scoreBoard">
       <div class="score-area">
         <div class="choice" id="playerChoice">
@@ -23,23 +23,30 @@
         </div>
         <p class="score" id="computerScore">Computer: 0</p>
       </div>
-      <div class="result" id="result">
-        hello
-      </div>
     </div>
     <div class="buttons">
       <div class="btn" id="rockBtn">
-          <div class="choice">ROCKs</div>
-          <img class="choice" id="fireIcon" src="images/fire.png">
+          <div class="choice">FIRE</div>
+          <img class="choice" id="fireIcon" src="images/fire.png" style="width:100px;height:100px">
       </div>
       <div class="btn" id="paperBtn">
-        <div class="choice">PAPER</div>
+        <div class="choice">WATER</div>
+        <img class="choice" id="waterIcon" src="images/water.png" style="width:100px;height:100px">
       </div>
       <div class="btn" id="scissorsBtn">
-        <div class="choice">SCISSORS</div>
+        <div class="choice">GRASS</div>
+        <img class="choice" id="grassIcon" src="images/grass.png" style="width:100px;height:100px">
       </div>
     </div>
-  </main>
+  </div>
+    <div class="endContainer" id="endContainer">
+      <div class="result" id="result">
+        hello
+      </div>
+      <div class="reset" id="resetBtn">
+        <a href="index.html" id="resetBtn">Play again?</a>
+      </div>
+    </div>
     <script src="rock-paper-scissor.js"></script>
 </body>
 </html>

@@ -3,6 +3,7 @@
   align-items: center;
   justify-content: center;
   gap: 30px;
+  padding-right: 5px;
 }
 
 .btn{
@@ -32,25 +33,17 @@
 }
 
 #rockBtn:hover{
-  background-color:grey;
-  transform: translate(3%,-2%);
-  transition: all 0.1s ease-in;
-}
-
-#rockBtn:active{
-  background-color:tomato;
+  transform: translate(5%,-4%);
   transition: all 0.1s ease-in;
 }
 
 #paperBtn:hover{
-  background-color:deepskyblue;
-  transform: translate(3%,-2%);
+  transform: translate(5%,-4%);
   transition: all 0.1s ease-in;
 }
 
 #scissorsBtn:hover{
-  background-color:chartreuse;
-  transform: translate(3%,-2%);
+  transform: translate(5%,-4%);
   transition: all 0.1s ease-in;
 }
 
@@ -70,6 +63,10 @@ body{
   display: none;
 }
 
+.btn.unclickable{
+  pointer-events: none;
+}
+
 .selectionContainer{
   display: flex;
   border-radius: 10px; 
@@ -82,7 +79,7 @@ body{
   margin: 20px;
   gap: 10px;
   padding: 10px;
-  background-color:lightgrey;
+  background-color:silver;
 }
 
 .selectionInfo{
@@ -95,8 +92,14 @@ body{
   height: 80px;
 }
 
-#playerChoice{
-  background: url("images/rock.png") no-repeat);
+.header{
+  display: flex;
+  justify-content: center;
+  padding: 20px 0px;
+}
+
+#random{
+  display:none;
 }
 
 

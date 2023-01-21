@@ -52,7 +52,7 @@ function playRound(playerSelection, computerSelection){
     ){
         computerScore++;
     }
-    updateScore(playerSelection, computerSelection);
+    setTimeout(updateScore,500,playerSelection, computerSelection);
 
     if(playerScore == 5 || computerScore == 5){
         endGame(playerScore,computerScore);
@@ -63,18 +63,48 @@ function log(e){
     console.log(this);
 }
 
+function disableClick(){
+    document.getElementById("rockBtn").className = "btn unclickable";
+    document.getElementById("paperBtn").className = "btn unclickable";
+    document.getElementById("scissorsBtn").className = "btn unclickable";
+}
+
+function enableClick(){
+    document.getElementById("rockBtn").className = "btn";
+    document.getElementById("paperBtn").className = "btn";
+    document.getElementById("scissorsBtn").className = "btn";
+}
+
+function confirmChoice(playerSelection){
+    rockBtn.style.backgroundColor = "white";
+    paperBtn.style.backgroundColor = "white";
+    scissorsBtn.style.backgroundColor = "white";
+
+    if(playerSelection == "rock"){
+        rockBtn.style.backgroundColor = "tomato";
+    }
+    else if(playerSelection == "paper"){
+        paperBtn.style.backgroundColor = "tomato";
+    }
+    else{
+        scissorsBtn.style.backgroundColor = "tomato";
+    }
+}
+
 function processChoice(playerSelection){
     const computerSelection = getComputerChoice();
+    confirmChoice(playerSelection);
     document.getElementById("playerChoice").src=`images/${playerSelection}.png`;
-    document.getElementById("computerChoice").src=`images/${computerSelection}.png`;
+    document.getElementById("computerChoice").src="images/randomiser.gif";
+    disableClick();
+    setTimeout(() => {document.getElementById("computerChoice").src=`images/${computerSelection}.png`;},500);
+    setTimeout(enableClick,500);
     playRound(playerSelection,computerSelection);
 }
 
 function updateScore(playerSelection,computerSelection){
     document.getElementById('playerScore').innerHTML = `Player: ${playerScore}`
     document.getElementById('computerScore').innerHTML = `Computer: ${computerScore}`
-    //document.getElementById('playerChoice').innerHTML = `Player Chose: ${playerSelection}`
-    document.getElementById('computerChoice').innerHTML = `Computer Chose: ${computerSelection}`
 }
 
 //

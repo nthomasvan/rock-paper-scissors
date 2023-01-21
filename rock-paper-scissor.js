@@ -57,51 +57,6 @@ function playRound(playerSelection, computerSelection){
     if(playerScore == 5 || computerScore == 5){
         endGame(playerScore,computerScore);
     }
-    /*
-    switch(playerSelection){
-        case "rock":
-            if(computerSelection == "rock")
-            {
-                return "It's a tie!";
-            }
-            else if (computerSelection == "paper")
-            {
-                return "You Lose! Paper covers rock!";
-            }
-            else
-            {
-                return "You Win! Rock smashes scissors";
-            }
-            break;
-        case "scissors":
-            if(computerSelection == "rock")
-            {
-                return "You lose! Rock smashes scissors";
-            }
-            else if (computerSelection == "paper")
-            {
-                return "You Win! Scissors cut paper!";
-            }
-            else
-            {
-                return "Its a tie!";
-            }
-            break;
-        case "paper":
-            if(computerSelection == "rock")
-            {
-                return "You Win! Paper covers rock";
-            }
-            else if (computerSelection == "paper")
-            {
-                return "Its a tie!";
-            }
-            else
-            {
-                return "You lose! Scissors cut paper!";
-            }
-            break;
-            */
 }
 
 function log(e){
@@ -109,14 +64,16 @@ function log(e){
 }
 
 function processChoice(playerSelection){
-    const computerSelect = getComputerChoice();
-    playRound(playerSelection,computerSelect);
+    const computerSelection = getComputerChoice();
+    document.getElementById("playerChoice").src=`images/${playerSelection}.png`;
+    document.getElementById("computerChoice").src=`images/${computerSelection}.png`;
+    playRound(playerSelection,computerSelection);
 }
 
 function updateScore(playerSelection,computerSelection){
     document.getElementById('playerScore').innerHTML = `Player: ${playerScore}`
     document.getElementById('computerScore').innerHTML = `Computer: ${computerScore}`
-    document.getElementById('playerChoice').innerHTML = `Player Chose: ${playerSelection}`
+    //document.getElementById('playerChoice').innerHTML = `Player Chose: ${playerSelection}`
     document.getElementById('computerChoice').innerHTML = `Computer Chose: ${computerSelection}`
 }
 

@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Rock-Paper-Scissors</title>
   <link rel="stylesheet" href="style.css">
+  <title>Rock-Paper-Scissors</title>
 </head>
 <body>
   <header class="header">
@@ -12,30 +12,38 @@
   <div class="gameContainer">
     <div class="scoreBoard">
       <div class="score-area">
-        <div class="choice" id="playerChoice">
+        <div class="choice">
           You Chose: 
+          <img class="result" id="playerChoice" src="images/questionMark.png" style="width:70px;height:70px">
+          <img class="random" id="random" src="images/randomiser.gif" style="width:70px;height:70px">
         </div>
         <p class="score" id="playerScore">Player: 0</p>
       </div>
       <div class="score-area">
-        <div class="choice" id="computerChoice">
+        <div class="choice">
           Computer Chose: 
+          <img class="result" id="computerChoice" src="images/questionMark.png" style="width:70px;height:70px">
         </div>
         <p class="score" id="computerScore">Computer: 0</p>
       </div>
     </div>
-    <div class="buttons">
-      <div class="btn" id="rockBtn">
-          <div class="choice">FIRE</div>
-          <img class="choice" id="fireIcon" src="images/fire.png" style="width:100px;height:100px">
+    <div class="selectionContainer">
+      <div class="selectionInfo">
+        <a id="selectionInfo">CHOOSE YOUR MOVE!</a>
       </div>
-      <div class="btn" id="paperBtn">
-        <div class="choice">WATER</div>
-        <img class="choice" id="waterIcon" src="images/water.png" style="width:100px;height:100px">
-      </div>
-      <div class="btn" id="scissorsBtn">
-        <div class="choice">GRASS</div>
-        <img class="choice" id="grassIcon" src="images/grass.png" style="width:100px;height:100px">
+      <div class="buttons">
+        <div class="btn" id="rockBtn">
+            <div class="choice">ROCK</div>
+            <img class="choice" id="rockIcon" src="images/rock.png" style="width:70px;height:70px">
+        </div>
+        <div class="btn" id="paperBtn">
+          <div class="choice">PAPER</div>
+          <img class="choice" id="paperIcon" src="images/paper.png" style="width:60px;height:60px">
+        </div>
+        <div class="btn" id="scissorsBtn">
+          <div class="choice">SCISSORS</div>
+          <img class="choice" id="scissorsIcon" src="images/scissors.png" style="width:60px;height:60px">
+        </div>
       </div>
     </div>
   </div>

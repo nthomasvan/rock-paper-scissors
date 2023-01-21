@@ -2,20 +2,43 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 50px;
+  gap: 30px;
 }
 
 .btn{
   border: 20px;
+  border-radius: 10px;
   background-color:white;
   box-shadow: 4px 5px 0px black;
   text-align: center;
   font-weight: bold;
+  width: 100px;
+  height: 100px;
+}
+
+.scoreBoard{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+#paperIcon{
+  padding-top: 10px;
+}
+
+#scissorsIcon{
+  padding-top: 10px;
 }
 
 #rockBtn:hover{
-  background-color:tomato;
+  background-color:grey;
   transform: translate(3%,-2%);
+  transition: all 0.1s ease-in;
+}
+
+#rockBtn:active{
+  background-color:tomato;
   transition: all 0.1s ease-in;
 }
 
@@ -32,17 +55,48 @@
 }
 
 body{
-  background-color: grey;
+  background-color:antiquewhite;
 }
 
 .gameContainer{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
 }
 
 .endContainer{
   display: none;
 }
+
+.selectionContainer{
+  display: flex;
+  border-radius: 10px; 
+  border-style: double;
+  border-width: 20px;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  height: 150px;
+  margin: 20px;
+  gap: 10px;
+  padding: 10px;
+  background-color:lightgrey;
+}
+
+.selectionInfo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 10px;
+  /*border-style: double; */
+  font-weight: bold;
+  height: 80px;
+}
+
+#playerChoice{
+  background: url("images/rock.png") no-repeat);
+}
+
 

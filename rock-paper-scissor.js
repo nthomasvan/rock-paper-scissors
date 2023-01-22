@@ -1,5 +1,6 @@
 let playerScore = 0;
 let computerScore = 0;
+const timeDelay = 500;
 
 function getComputerChoice(){
     let computerChoice = getRandomInt(3);
@@ -52,7 +53,7 @@ function playRound(playerSelection, computerSelection){
     ){
         computerScore++;
     }
-    setTimeout(updateScore,500,playerSelection, computerSelection);
+    setTimeout(updateScore,500);
 
     if(playerScore == 5 || computerScore == 5){
         endGame(playerScore,computerScore);
@@ -97,14 +98,30 @@ function processChoice(playerSelection){
     document.getElementById("playerChoice").src=`images/${playerSelection}.png`;
     document.getElementById("computerChoice").src="images/randomiser.gif";
     disableClick();
-    setTimeout(() => {document.getElementById("computerChoice").src=`images/${computerSelection}.png`;},500);
+    setTimeout(() => {document.getElementById("computerChoice").src=`images/${computerSelection}.png`;},timeDelay);
     setTimeout(enableClick,500);
     playRound(playerSelection,computerSelection);
 }
 
-function updateScore(playerSelection,computerSelection){
-    document.getElementById('playerScore').innerHTML = `Player: ${playerScore}`
+function updateScore(){
     document.getElementById('computerScore').innerHTML = `Computer: ${computerScore}`
+    document.getElementById('playerScore').innerHTML = `Player: ${playerScore}`
+    
+    if(playerScore == 4){
+        document.getElementById(`computerHeath-${playerScore}`).src = "images/heartEmpty.png"
+        document.getElementById(`computerHeath-5`).src = "images/lastHeart.gif"
+    }
+    else if(playerScore != 0 ){
+        document.getElementById(`computerHeath-${playerScore}`).src = "images/heartEmpty.png"
+    }
+
+    if(computerScore == 4){
+        document.getElementById(`playerHeath-${computerScore}`).src = "images/heartEmpty.png"
+        document.getElementById(`playerHeath-5`).src = "images/lastHeart.gif"
+    }
+    else if(computerScore != 0){
+        document.getElementById(`playerHeath-${computerScore}`).src = "images/heartEmpty.png"
+    }
 }
 
 //
@@ -116,13 +133,3 @@ const scissorsBtn = document.getElementById("scissorsBtn");
 rockBtn.addEventListener('click',() => processChoice('rock'));
 paperBtn.addEventListener('click',() => processChoice('paper'));
 scissorsBtn.addEventListener('click',() => processChoice('scissors'));
-
-
-/*
-let answer = prompt("Rock Paper Scissors! Please type in choice:");
-var test = getComputerChoice();
-console.log("computer choice: " + test);
-console.log("Player choice: " + answer);
-console.log(playRound(answer,test));
-
-*/

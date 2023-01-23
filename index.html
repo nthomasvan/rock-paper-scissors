@@ -1,9 +1,86 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Page Title</title>
+  <link rel="stylesheet" href="style.css">
+  <title>Rock-Paper-Scissors</title>
 </head>
 <body>
+  <header class="header">
+    <h1 class="title">ROCK PAPER SCISSORS</h1>
+  </header>
+  <div class="gameContainer">
+    <div class="scoreBoard">
+      <div class="score-area">
+        <div class="choice">
+          PLAYER CHOSE: 
+        </div>
+          <img class="result" id="playerChoice" src="images/questionMark.png" style="width:70px;height:70px">
+        <p class="score" id="playerScore">Player: 0</p>
+        <div class="health">
+          <img class="health" id="playerHeath-1" src="images/heart.png" style="width:40px;height=40px">
+          <img class="health" id="playerHeath-2" src="images/heart.png" style="width:40px;height=40px">
+          <img class="health" id="playerHeath-3" src="images/heart.png" style="width:40px;height=40px">
+          <img class="health" id="playerHeath-4" src="images/heart.png" style="width:40px;height=40px">
+          <img class="health" id="playerHeath-5" src="images/heart.png" style="width:40px;height=40px">        
+        </div>
+      </div>
+      <img src="images/versus.png" style="width:120px;height:130px">
+      <div class="score-area">
+        <div class="choice">
+          COMPUTER CHOSE:
+        </div> 
+          <img class="result" id="computerChoice" src="images/questionMark.png" style="width:70px;height:70px">
+        <p class="score" id="computerScore">Computer: 0</p>
+        <div class="health">
+          <img class="health" id="computerHeath-1" src="images/heart.png" style="width:40px;height=40px">
+          <img class="health" id="computerHeath-2" src="images/heart.png" style="width:40px;height=40px">
+          <img class="health" id="computerHeath-3" src="images/heart.png" style="width:40px;height=40px">
+          <img class="health" id="computerHeath-4" src="images/heart.png" style="width:40px;height=40px">
+          <img class="health" id="computerHeath-5" src="images/heart.png" style="width:40px;height=40px">        
+        </div>
+      </div>
+    </div>
+    <div class="selectionContainer">
+      <div class="selectionInfo">
+        <a id="selectionInfo">CHOOSE YOUR MOVE!</a>
+      </div>
+      <div class="buttons">
+        <div class="btn" id="rockBtn">
+            <div class="choice">ROCK</div>
+            <img class="choice" id="rockIcon" src="images/rock.png" style="width:70px;height:70px">
+        </div>
+        <div class="btn" id="paperBtn">
+          <div class="choice">PAPER</div>
+          <img class="choice" id="paperIcon" src="images/paper.png" style="width:60px;height:60px">
+        </div>
+        <div class="btn" id="scissorsBtn">
+          <div class="choice">SCISSORS</div>
+          <img class="choice" id="scissorsIcon" src="images/scissors.png" style="width:60px;height:60px">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="endContainer" id="endContainer">
+    <img src="images/game-over.png">
+    <div class="result" id="result">
+      hello
+    </div>
+    <div class="reset" id="resetBtn">
+      <a target="_blank" href="index.html"><img src="images/play-again.png"  style="width:200px;height:150px"/></a>
+    </div>
+  </div>
+  <footer class="footer">
+    <p>
+        Copyright ©  
+    <script>
+      document.write(new Date().getFullYear());
+    </script>
+    nthomasvan
+    </p>
+    <a id="github" target="_blank" href="https://github.com/nthomasvan"><img src="images/github-mark.png"  style="width:40px;height:40px"/></a>
+    </a>
+  </footer>
     <script src="rock-paper-scissor.js"></script>
 </body>
 </html>

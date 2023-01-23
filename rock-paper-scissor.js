@@ -1,7 +1,65 @@
+/**
+ * @author Thomas Nguyen
+ * @version 1.0.0
+ * ...
+ */
+
+//Initial variable declarations
 let playerScore = 0;
 let computerScore = 0;
 const timeDelay = 500;
 
+const rockBtn = document.getElementById("rockBtn");
+const paperBtn = document.getElementById("paperBtn");
+const scissorsBtn = document.getElementById("scissorsBtn");
+
+//Sets background colour to tomato to provide confirmation of player choice
+function confirmChoice(playerSelection){
+    rockBtn.style.backgroundColor = "white";
+    paperBtn.style.backgroundColor = "white";
+    scissorsBtn.style.backgroundColor = "white";
+
+    if(playerSelection == "rock"){
+        rockBtn.style.backgroundColor = "tomato";
+    }
+    else if(playerSelection == "paper"){
+        paperBtn.style.backgroundColor = "tomato";
+    }
+    else{
+        scissorsBtn.style.backgroundColor = "tomato";
+    }
+}
+
+//Prevents buttons from being clicked while computer choice animation is running
+function disableClick(){
+    document.getElementById("rockBtn").className = "btn unclickable";
+    document.getElementById("paperBtn").className = "btn unclickable";
+    document.getElementById("scissorsBtn").className = "btn unclickable";
+}
+
+//Enables buttons to be clickable
+function enableClick(){
+    document.getElementById("rockBtn").className = "btn";
+    document.getElementById("paperBtn").className = "btn";
+    document.getElementById("scissorsBtn").className = "btn";
+}
+
+//Hides game UI and reveals the GAME OVER splash screen
+function endGame(playerScore,computerScore){
+    let gameContainer = document.querySelector('.gameContainer');
+    let endContainer = document.querySelector('.endContainer');
+    gameContainer.style.display = 'none';
+    endContainer.style.display = 'flex';
+
+    if(playerScore == 5){
+        document.getElementById('result').innerHTML = `You Won! ${playerScore}:${computerScore}`;
+    }
+    else{
+        document.getElementById('result').innerHTML = `You Lost! ${playerScore}:${computerScore}`;
+    }
+}
+
+//Randomises computer's move
 function getComputerChoice(){
     let computerChoice = getRandomInt(3);
 
@@ -20,24 +78,12 @@ function getComputerChoice(){
     }
 }
 
-function endGame(playerScore,computerScore){
-    let gameContainer = document.querySelector('.gameContainer');
-    let endContainer = document.querySelector('.endContainer');
-    gameContainer.style.display = 'none';
-    endContainer.style.display = 'block';
-
-    if(playerScore == 5){
-        document.getElementById('result').innerHTML = `You Won! ${playerScore}:${computerScore}`;
-    }
-    else{
-        document.getElementById('result').innerHTML = `You Lost! ${playerScore}:${computerScore}`;
-    }
-}
-
+//Produces random integer used for computer choice
 function getRandomInt(max){
     return Math.floor(Math.random()*max);
 }
 
+//Logic for Rock paper scissors game, 
 function playRound(playerSelection, computerSelection){
     if(
         (playerSelection === "rock" && computerSelection === "scissors") || 
@@ -60,38 +106,7 @@ function playRound(playerSelection, computerSelection){
     }
 }
 
-function log(e){
-    console.log(this);
-}
-
-function disableClick(){
-    document.getElementById("rockBtn").className = "btn unclickable";
-    document.getElementById("paperBtn").className = "btn unclickable";
-    document.getElementById("scissorsBtn").className = "btn unclickable";
-}
-
-function enableClick(){
-    document.getElementById("rockBtn").className = "btn";
-    document.getElementById("paperBtn").className = "btn";
-    document.getElementById("scissorsBtn").className = "btn";
-}
-
-function confirmChoice(playerSelection){
-    rockBtn.style.backgroundColor = "white";
-    paperBtn.style.backgroundColor = "white";
-    scissorsBtn.style.backgroundColor = "white";
-
-    if(playerSelection == "rock"){
-        rockBtn.style.backgroundColor = "tomato";
-    }
-    else if(playerSelection == "paper"){
-        paperBtn.style.backgroundColor = "tomato";
-    }
-    else{
-        scissorsBtn.style.backgroundColor = "tomato";
-    }
-}
-
+//Updates image to show move selected for round
 function processChoice(playerSelection){
     const computerSelection = getComputerChoice();
     confirmChoice(playerSelection);
@@ -103,6 +118,7 @@ function processChoice(playerSelection){
     playRound(playerSelection,computerSelection);
 }
 
+//Updates player score and hearts health bar
 function updateScore(){
     document.getElementById('computerScore').innerHTML = `Computer: ${computerScore}`
     document.getElementById('playerScore').innerHTML = `Player: ${playerScore}`
@@ -124,12 +140,7 @@ function updateScore(){
     }
 }
 
-//
-const rockBtn = document.getElementById("rockBtn");
-const paperBtn = document.getElementById("paperBtn");
-const scissorsBtn = document.getElementById("scissorsBtn");
-
-
+//Event listeners for move button clicks
 rockBtn.addEventListener('click',() => processChoice('rock'));
 paperBtn.addEventListener('click',() => processChoice('paper'));
 scissorsBtn.addEventListener('click',() => processChoice('scissors'));

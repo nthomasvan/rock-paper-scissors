@@ -17,6 +17,11 @@
   height: 100px;
 }
 
+.btn:hover{
+  transform: translate(5%,-4%);
+  transition: all 0.1s ease-in;
+}
+
 .scoreBoard{
   display: flex;
   align-items: center;
@@ -33,6 +38,7 @@
   padding-top: 10px;
 }
 
+/*
 #rockBtn:hover{
   transform: translate(5%,-4%);
   transition: all 0.1s ease-in;
@@ -47,7 +53,7 @@
   transform: translate(5%,-4%);
   transition: all 0.1s ease-in;
 }
-
+*/
 body{
   background-color:antiquewhite;
 }
@@ -62,10 +68,13 @@ body{
 
 .endContainer{
   display: none;
+  width: 100%;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 30px;
   font-weight: bold;
+  font-size: 20px;
 }
 
 .btn.unclickable{
@@ -92,7 +101,6 @@ body{
   justify-content: center;
   align-items: center;
   border: 10px;
-  /*border-style: double; */
   font-weight: bold;
   height: 80px;
 }
@@ -109,8 +117,6 @@ body{
   justify-content: center;
   align-items: center;
   gap: 10px;
-
-
   padding: 10px;
   background-color:silver;
   border-radius: 10px; 
@@ -118,19 +124,26 @@ body{
   border-width: 10px;
 }
 
-.reset{
-  border: 20px;
-  border-radius: 10px;
-  background-color:white;
-  box-shadow: 4px 5px 0px black;
-  text-align: center;
-  font-weight: bold;
-  width: 80px;
-  height: 50px;
-}
-
 .health{
   display: flex;
   flex-direction: row;
   gap:5px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px;
+  font-size: 20px;
+}
+
+#github:hover{
+  transform: rotate(360deg) scale(1.2);
+  transition: transform 0.3s ease-in-out;
 }

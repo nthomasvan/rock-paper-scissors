@@ -120,8 +120,8 @@ function processChoice(playerSelection){
 
 //Updates player score and hearts health bar
 function updateScore(){
-    document.getElementById('computerScore').innerHTML = `Computer: ${computerScore}`
-    document.getElementById('playerScore').innerHTML = `Player: ${playerScore}`
+    document.getElementById('computerScore').innerHTML = `SCORE: ${computerScore}`
+    document.getElementById('playerScore').innerHTML = `SCORE: ${playerScore}`
     
     if(playerScore == 4){
         document.getElementById(`computerHeath-${playerScore}`).src = "images/heartEmpty.png"

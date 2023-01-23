@@ -38,22 +38,6 @@
   padding-top: 10px;
 }
 
-/*
-#rockBtn:hover{
-  transform: translate(5%,-4%);
-  transition: all 0.1s ease-in;
-}
-
-#paperBtn:hover{
-  transform: translate(5%,-4%);
-  transition: all 0.1s ease-in;
-}
-
-#scissorsBtn:hover{
-  transform: translate(5%,-4%);
-  transition: all 0.1s ease-in;
-}
-*/
 body{
   background-color:antiquewhite;
 }
